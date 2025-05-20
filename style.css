@@ -1,0 +1,235 @@
+/* ------- [Layout Global] ------- */
+/* Define fonte padrão, cor de fundo e remove margens/paddings do body */
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* ------- [Blocos informativos laterais] ------- */
+/* Estilo base para ambos os blocos */
+.info-lateral {
+    position: fixed;
+    top: 0;
+    width: 240px;
+    min-height: 100vh;
+    background: #eaf6fb;
+    color: #1a3a4a;
+    padding: 30px 18px 18px 18px;
+    box-shadow: 0 0 10px rgba(44, 62, 80, 0.07);
+    z-index: 10;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+/* Bloco da esquerda */
+.info-esquerda {
+    left: 0;
+    border-right: 2px solid #b3d6e6;
+}
+/* Bloco da direita */
+.info-direita {
+    right: 0;
+    border-left: 2px solid #b3d6e6;
+}
+.info-lateral h3 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #217dbb;
+    text-align: center;
+}
+.info-lateral ul {
+    padding-left: 18px;
+    margin: 0;
+}
+.info-lateral li {
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+.info-lateral code {
+    background: #d6eaf8;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+/* ------- [Container Principal] ------- */
+/* Centraliza e estiliza o container principal da aplicação */
+.container {
+    justify-self: center;
+    max-width: 800px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    /* Espaço para os blocos laterais */
+    margin-left: 270px;
+    margin-right: 270px;
+}
+
+@media (max-width: 1100px) {
+    .info-lateral {
+        display: none;
+    }
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* ------- [Títulos] ------- */
+/* Estilização do título principal */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* ------- [Formulário] ------- */
+/* Layout flexível para o formulário e espaçamento entre elementos */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+    align-items: flex-end;
+}
+
+/* Rótulos do formulário ocupam linha inteira e têm espaçamento superior */
+form label {
+    flex: 1 0 100%;
+    margin-top: 10px;
+}
+
+/* Inputs do formulário ocupam quase metade da linha, com padding e borda arredondada */
+form input {
+    flex: 1 0 45%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Botão do formulário ocupa linha inteira, com destaque de cor e efeito hover */
+form button {
+    flex: 1 0 100%;
+    padding: 10px;
+    background: #2980b9;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+form button:hover {
+    background: #3498db;
+}
+
+/* ------- [Seções de Resultados] ------- */
+/* Espaçamento superior para as seções de passos, histórico e gráfico */
+#passos, #historico, #grafico {
+    margin-top: 30px;
+}
+
+/* Caixa de exibição dos passos do cálculo, com rolagem e visual limpo */
+#passos pre {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* ------- [Tabela de Histórico] ------- */
+/* Tabela ocupa toda a largura e não tem espaçamento entre bordas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    /* Para responsividade */
+    table-layout: auto;
+    word-break: break-word;
+}
+
+/* Bordas suaves para tabela, cabeçalho e células */
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+/* Espaçamento interno e centralização do texto nas células */
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
+/* Cabeçalho da tabela com cor de fundo destacada e texto branco */
+th {
+    background: #2980b9;
+    color: #fff;
+}
+
+/* ------- [Gráfico] ------- */
+/* Centraliza o canvas do gráfico na tela */
+#grafico {
+    text-align: center;
+}
+#grafico-bissecao {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* ------- [Responsividade para mobile] ------- */
+@media (max-width: 700px) {
+    .container {
+        padding: 10px;
+        margin: 0 0 0 0;
+        max-width: 100vw;
+        border-radius: 0;
+    }
+    table {
+        font-size: 13px;
+        display: block;
+        overflow-x: auto;
+        width: 100%;
+    }
+    thead, tbody, th, td, tr {
+        display: block;
+    }
+    thead {
+        display: none;
+    }
+    tbody tr {
+        margin-bottom: 10px;
+        border-bottom: 2px solid #eee;
+    }
+    td {
+        text-align: left;
+        padding-left: 40%;
+        position: relative;
+        min-height: 30px;
+        border: none;
+        border-bottom: 1px solid #eee;
+    }
+    td:before {
+        position: absolute;
+        left: 10px;
+        top: 8px;
+        width: 35%;
+        white-space: nowrap;
+        font-weight: bold;
+        color: #217dbb;
+        content: attr(data-label);
+    }
+    #grafico-bissecao {
+        width: 100% !important;
+        height: auto !important;
+        min-width: 0;
+        max-width: 100vw;
+    }
+} 

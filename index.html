@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método da Bisseção</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ------ Seção: Bloco informativo lateral esquerdo (Operadores) ------ -->
+    <aside class="info-lateral info-esquerda">
+        <h3>Operadores Matemáticos</h3>
+        <ul>
+            <li><b>+</b> : Soma (ex: x + 2)</li>
+            <li><b>-</b> : Subtração (ex: x - 3)</li>
+            <li><b>*</b> : Multiplicação (ex: 2 * x)</li>
+            <li><b>/</b> : Divisão (ex: x / 4)</li>
+            <li><b>**</b> : Potência (ex: x ** 2)</li>
+            <li><b>Math.sqrt(x)</b> : Raiz quadrada</li>
+            <li><b>Math.sin(x)</b> : Seno</li>
+            <li><b>Math.cos(x)</b> : Cosseno</li>
+            <li><b>Math.exp(x)</b> : Exponencial</li>
+            <li><b>Math.log(x)</b> : Logaritmo natural</li>
+        </ul>
+    </aside>
+
+    <!-- ------ Seção: Bloco informativo lateral direito (Exemplos) ------ -->
+    <aside class="info-lateral info-direita">
+        <h3>Exemplos de Funções</h3>
+        <ul>
+            <li><code>x**2 - 4</code> <br> (Raiz: x = 2 ou x = -2)</li>
+            <li><code>Math.sin(x) - 0.5</code> <br> (Raiz: x ≈ 0.52)</li>
+            <li><code>Math.exp(x) - 2</code> <br> (Raiz: x ≈ 0.693)</li>
+            <li><code>Math.sqrt(x) - 3</code> <br> (Raiz: x = 9)</li>
+            <li><code>x/2 + 1</code> <br> (Raiz: x = -2)</li>
+        </ul>
+    </aside>
+
+    <!-- ------ Seção: Container principal do site ------ -->
+    <div class="container">
+        <!-- ------ Seção: Título ------ -->
+        <h1>Método da Bisseção</h1>
+
+        <!-- ------ Seção: Formulário de entrada de dados ------ -->
+        <form id="bissecao-form">
+            <label for="funcao">Função f(x):</label>
+            <input type="text" id="funcao" placeholder="Ex: x**3 - 9*x + 3" required>
+            <label for="a">Intervalo [a, b]:</label>
+            <input type="number" id="a" step="any" placeholder="a" required>
+            <input type="number" id="b" step="any" placeholder="b" required>
+            <label for="tol">Tolerância:</label>
+            <input type="number" id="tol" step="any" placeholder="Ex: 0.001" required>
+            <label for="max-iter">Máx. Iterações:</label>
+            <input type="number" id="max-iter" value="50" required>
+            <button type="submit">Calcular</button>
+        </form>
+
+        <!-- ------ Seção: Exibição dos passos do cálculo ------ -->
+        <div id="passos">
+            <h2>Passos do Cálculo</h2>
+            <pre id="passos-detalhes"></pre>
+        </div>
+
+        <!-- ------ Seção: Histórico de iterações ------ -->
+        <div id="historico">
+            <h2>Histórico de Iterações</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Iteração</th>  <!-- Número da iteração atual -->
+                        <th>a</th>         <!-- Limite inferior do intervalo -->
+                        <th>b</th>         <!-- Limite superior do intervalo -->
+                        <th>m</th>         <!-- Ponto médio do intervalo (m = (a+b)/2) -->
+                        <th>f(m)</th>      <!-- Valor da função avaliada em m -->
+                    </tr>
+                </thead>
+                <tbody id="historico-tabela"></tbody>
+            </table>
+        </div>
+
+        <!-- ------ Seção: Gráfico do método da bisseção ------ -->
+        <div id="grafico">
+            <h2>Gráfico</h2>
+            <canvas id="grafico-bissecao" width="600" height="400"></canvas>
+        </div>
+    </div>
+    <!-- ------ Seção: Inclusão do script principal ------ -->
+    <script src="script.js"></script>
+</body>
+</html> 
