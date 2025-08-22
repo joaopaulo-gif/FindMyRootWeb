@@ -7,7 +7,7 @@ Oferecer uma ferramenta simples, intuitiva e acessível para calcular raízes de
 
 ## 🚀 Como usar
 ### -= Online =------------
-| Click aqui -> [FindMyRoot Online](https://founder-gif.github.io/FindMyRootWeb/)
+| Click aqui -> [FindMyRoot Online](https://joaopaulo-gif.github.io/FindMyRootWeb/)
 ### -= Localmente =------
 1. **Clone ou baixe este repositório**
 2. **Abra o arquivo `index.html` em qualquer navegador moderno**
@@ -64,3 +64,4 @@ Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes
 
 ---
 Desenvolvido com 💙 para ajudar a comunidade acadêmica e profissional. 
+
